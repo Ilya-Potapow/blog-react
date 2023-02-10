@@ -2,7 +2,9 @@ import React from "react";
 import "./Input.css";
 
 const Input = (props) => {
-  return <input type="text" placeholder={props.placeholder}></input>;
+
+
+  return <input {...props} type="text"></input>;
 };
 
 export default Input;
