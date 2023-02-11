@@ -3,8 +3,8 @@ import { useState } from "react";
 import Button from "./UI/button/Button";
 import Input from "./UI/input/Input";
 
-const PostForm = ( {create} ) => {
-  const [currPost, setCurrPost] = useState({ title: "", desc: "" });
+const PostForm = ({ create }) => {
+  const [currPost, setCurrPost] = useState({ title: "", body: "" });
 
   const addNewPost = (e) => {
     e.preventDefault();
@@ -13,8 +13,8 @@ const PostForm = ( {create} ) => {
       id: Date.now(),
     };
     create(newPost);
-    setCurrPost({ title: "", desc: "" });
-  }
+    setCurrPost({ title: "", body: "" });
+  };
 
   return (
     <form className="posts_form">
@@ -24,8 +24,8 @@ const PostForm = ( {create} ) => {
         placeholder="Title"
       />
       <Input
-        value={currPost.desc}
-        onChange={(e) => setCurrPost({ ...currPost, desc: e.target.value })}
+        value={currPost.body}
+        onChange={(e) => setCurrPost({ ...currPost, body: e.target.value })}
         placeholder="Decription"
       />
       <Button onClick={addNewPost}>Add post</Button>

@@ -1,0 +1,22 @@
+.ModalPosts {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background-color: #0000005c;
+}
+
+.ModalPostsContent {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    min-width: 250px;
+}
+
+.ModalPosts.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
