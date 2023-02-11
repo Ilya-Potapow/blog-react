@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "./UI/button/Button";
 import Input from "./UI/input/Input";
 
-const PostForm = ({ create }) => {
+const PostForm = ( {create} ) => {
   const [currPost, setCurrPost] = useState({ title: "", desc: "" });
 
   const addNewPost = (e) => {
