@@ -9,33 +9,27 @@ import PostFilter from "./components/PostFilter";
 import ModalPosts from "./components/UI/modal/ModalPosts";
 import Button from "./components/UI/button/Button";
 import { usePosts } from "./hooks/usePosts";
-// import axios from "axios";
 import { postRequest } from "./API/PostServise";
 import Loader from "./components/UI/loader/Loader";
+import { UseFetching } from "./hooks/useFetching";
 
 function App() {
   const [postsData, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: '', search: '' })
   const seachedAndSortedPosts = usePosts(postsData, filter.sort, filter.search)
-  const [postsLoading, setPostsLoading] = useState(false)
-
-  async function fetchPosts() {
-    setPostsLoading(true)
-    setTimeout(async () => {
-      const postsData = await postRequest.getPosts()
-      setPosts(postsData)
-      setPostsLoading(false)
-    }, 1500)
-  }
+  const [getPosts, postsLoading, postsError] = UseFetching(async () => {
+    const postsData = await postRequest.getPosts()
+    setPosts(postsData)
+  })
 
   useEffect(() => {
-    fetchPosts()
+    getPosts()
   }, [])
 
 
 
   const createPost = (newPost) => {
-    setPosts([...postsData, newPost])
+    setPosts([newPost, ...postsData])
     setModal(false)
   }
   const removePost = (currPost) => {
@@ -61,9 +55,11 @@ function App() {
         filter={filter}
         setFilter={setFilter}
       />
-
+      {postsError &&
+        <span style={{ color: 'orange' }}>{postsError}</span>
+      }
       {postsLoading
-        ? <div style={{ marginTop: '50px' }}><Loader/></div>
+        ? <div style={{ marginTop: '50px' }}><Loader /></div>
         : <PostList remove={removePost} posts={seachedAndSortedPosts} title={'New posts'} />
       }
 
