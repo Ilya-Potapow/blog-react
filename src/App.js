@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useMemo } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import "./styles/App.css"
 
 import PostList from "./components/PostList";
@@ -9,11 +9,29 @@ import PostFilter from "./components/PostFilter";
 import ModalPosts from "./components/UI/modal/ModalPosts";
 import Button from "./components/UI/button/Button";
 import { usePosts } from "./hooks/usePosts";
+// import axios from "axios";
+import { postRequest } from "./API/PostServise";
+import Loader from "./components/UI/loader/Loader";
 
 function App() {
-  const [postsData, setPosts] = useState();
+  const [postsData, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: '', search: '' })
   const seachedAndSortedPosts = usePosts(postsData, filter.sort, filter.search)
+  const [postsLoading, setPostsLoading] = useState(false)
+
+  async function fetchPosts() {
+    setPostsLoading(true)
+    setTimeout(async () => {
+      const postsData = await postRequest.getPosts()
+      setPosts(postsData)
+      setPostsLoading(false)
+    }, 1500)
+  }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
 
 
   const createPost = (newPost) => {
@@ -43,7 +61,12 @@ function App() {
         filter={filter}
         setFilter={setFilter}
       />
-      <PostList remove={removePost} posts={seachedAndSortedPosts} title={'New posts'} />
+
+      {postsLoading
+        ? <div style={{ marginTop: '50px' }}><Loader/></div>
+        : <PostList remove={removePost} posts={seachedAndSortedPosts} title={'New posts'} />
+      }
+
 
 
 
