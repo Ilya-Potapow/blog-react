@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/App.css"
 
 import PostList from "./components/PostList";
@@ -12,21 +11,28 @@ import { usePosts } from "./hooks/usePosts";
 import { postRequest } from "./API/PostServise";
 import Loader from "./components/UI/loader/Loader";
 import { UseFetching } from "./hooks/useFetching";
+import { getPagesCount } from "./utils/pages";
+import Pagination from "./components/UI/pagination/Pagination";
 
 function App() {
   const [postsData, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: '', search: '' })
   const seachedAndSortedPosts = usePosts(postsData, filter.sort, filter.search)
+  const [modal, setModal] = useState(false)
+  const [totalPages, setTotalPages] = useState(0)
+  const [limit, setLimit] = useState(10)
+  const [page, setPage] = useState(1)
+
   const [getPosts, postsLoading, postsError] = UseFetching(async () => {
-    const postsData = await postRequest.getPosts()
-    setPosts(postsData)
+    const response = await postRequest.getPosts(limit, page)
+    setPosts(response.data)
+    const totaCount = (response.headers['x-total-count'])
+    setTotalPages(getPagesCount(totaCount, limit))
   })
 
   useEffect(() => {
     getPosts()
-  }, [])
-
-
+  }, [page])
 
   const createPost = (newPost) => {
     setPosts([newPost, ...postsData])
@@ -35,7 +41,10 @@ function App() {
   const removePost = (currPost) => {
     setPosts(postsData.filter(p => p.id !== currPost.id))
   }
-  const [modal, setModal] = useState(false)
+
+  const changePage = (page) => {
+    setPage(page)
+  }
 
   return (
     <div style={{ paddingTop: '50px' }} className='App'>
@@ -62,10 +71,11 @@ function App() {
         ? <div style={{ marginTop: '50px' }}><Loader /></div>
         : <PostList remove={removePost} posts={seachedAndSortedPosts} title={'New posts'} />
       }
-
-
-
-
+      <Pagination
+        totalPages={totalPages}
+        currPage={page}
+        changePage={changePage}
+      />
     </div >
   );
 }
