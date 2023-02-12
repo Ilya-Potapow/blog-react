@@ -8,22 +8,13 @@ import PostForm from "./components/PostForm";
 import PostFilter from "./components/PostFilter";
 import ModalPosts from "./components/UI/modal/ModalPosts";
 import Button from "./components/UI/button/Button";
+import { usePosts } from "./hooks/usePosts";
 
 function App() {
-  const [postsData, setPosts] = useState([
-    { id: 1, title: "JavaScript", body: "Description" },
-    { id: 2, title: "PHP", body: "Description" },
-    { id: 3, title: "C++", body: "Description" },
-  ]);
+  const [postsData, setPosts] = useState();
   const [filter, setFilter] = useState({ sort: '', search: '' })
+  const seachedAndSortedPosts = usePosts(postsData, filter.sort, filter.search)
 
-  const sortedPosts = useMemo(() => filter.sort
-    ? [...postsData].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]))
-    : postsData, [filter.sort, postsData])
-
-  const seachedAndSortedPosts = useMemo(() => {
-    return sortedPosts.filter(p => p.title.toLowerCase().includes(filter.search))
-  }, [sortedPosts, filter.search])
 
   const createPost = (newPost) => {
     setPosts([...postsData, newPost])
