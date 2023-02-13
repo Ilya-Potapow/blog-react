@@ -1,6 +1,8 @@
 import Button from "./UI/button/Button";
+import { useNavigate  } from "react-router-dom";
 
 const PostItem = (props) => {
+  const router = useNavigate()
   return (
     <div className="posts">
       <div className="post_content">
@@ -10,7 +12,16 @@ const PostItem = (props) => {
         </h2>
         <p className="post_text">{props.post.body}</p>
       </div>
+      <div style={{display: "flex"}}>
       <Button onClick={() => props.remove(props.post)}>Delete</Button>
+      <Button 
+      style={{
+        marginLeft: '10px'
+      }}
+       onClick={() => router(`/posts/${props.post.id}`)}
+       >...
+       </Button>
+      </div>
     </div>
   );
 };

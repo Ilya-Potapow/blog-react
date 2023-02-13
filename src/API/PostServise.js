@@ -11,5 +11,14 @@ export class postRequest {
         return response
     }
 
+    static async getPostById(id) {
+        const response = await (await axios.get('https://jsonplaceholder.typicode.com/posts/' + id))
+        return response
+    }
+    static async getCommById(id) {
+        const response = await (await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`))
+        return response
+    }
+
 }
 
