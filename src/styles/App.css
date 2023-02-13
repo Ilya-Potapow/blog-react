@@ -6,14 +6,16 @@
 
 #root {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .App {
   width: 800px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+  /* display: flex;
+  flex-direction: column; */
+  /* row-gap: 20px; */
 }
 
 .posts {
@@ -73,4 +75,28 @@
 
 .page:active {
   transform: scale(0.95);
+}
+
+.navBar {
+  width: 800px;
+  height: 50px;
+  background-color:#6823a959;
+  margin-bottom: 50px;
+  padding: 0 15px;
+
+}
+
+.navBar_items {
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+
+.navBar_items> .links {
+  padding: 0 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
 }
