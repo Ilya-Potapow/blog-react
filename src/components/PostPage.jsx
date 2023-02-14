@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { postRequest } from '../API/PostServise'
-import { UseFetching } from '../hooks/useFetching'
+import { useFetching } from "../hooks/useFetching";
 import Loader from './UI/loader/Loader'
 const PostPage = () => {
     const params = useParams()
     const[post, setPost] = useState({})
     const[comm, setComm] = useState([])
-    const [fetchPostById, loading, error] = UseFetching(async()=>{
-        const response = await postRequest.getPostById(params.id)
-        setPost(response.data)
-    })
-    const [fetchCommById, commLoading, commError] = UseFetching(async()=>{
-        const response = await postRequest.getCommById(params.id)
-        setComm(response.data)
-    })
+    const [fetchPostById, loading, error] = useFetching(async () => {
+      const response = await postRequest.getPostById(params.id);
+      setPost(response.data);
+    });
+    const [fetchCommById, commLoading, commError] = useFetching(async () => {
+      const response = await postRequest.getCommById(params.id);
+      setComm(response.data);
+    });
     
     useEffect(() => {
         fetchPostById(params.id)
