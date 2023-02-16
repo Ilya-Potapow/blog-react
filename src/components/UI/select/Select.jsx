@@ -1,7 +1,8 @@
 import React from "react";
-import "./SortItem.css";
+import "./Select.css";
 
 const SortItem = ({ options, defaultValue, value, onChange }) => {
+
   return (
     <div>
       <select value={value} onChange={(e) => onChange(e.target.value)}>

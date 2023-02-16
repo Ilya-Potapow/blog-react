@@ -6,6 +6,16 @@ import { AUTH_Context } from "./context";
 import "./styles/App.css"
 
 
+/* 
+[] - вынести все фильтры в боковую панель и закрепить
+[+] - чекбокс для инфинит скрола
+[] - страница About
+[] - страница Error
+[+] - скрывать страницы при поиске
+[] - кнопка для скролла в начало страницы
+[] - стили для коментов поста
+*/
+
 
 function App() {
   const [isAuth, setIsAuth] = useState(false)
@@ -33,3 +43,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -1,11 +1,12 @@
-input{
-    
+input {
+    width: 100%;
     font-size: 16px;
     padding: 5px;
-    width: 100%;
-    border: 1px solid gray;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 5px;
 }
-input:focus{
+
+input:focus {
     outline: none;
     background-color: #c9f9fb4f;
 }
