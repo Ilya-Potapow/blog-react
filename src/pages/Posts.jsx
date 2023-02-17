@@ -33,14 +33,16 @@ function Posts() {
       setTotalPages(getPagesCount(totalCount, limit));
     }
   );
-  useEffect(() => {
-    fetchPosts(limit, page);
-  }, [page, limit]);
 
   useEffect(() => {
     setPosts([]);
+    setLimit(10);
     fetchPosts(limit, page);
   }, [checkCondition]);
+
+  useEffect(() => {
+    fetchPosts(limit, page);
+  }, [page, limit]);
 
   useObserver(lastEl, page < totalPages && checkCondition, postsLoading, () => {
     setPage(page + 1);

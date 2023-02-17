@@ -4,7 +4,7 @@ import { AUTH_Context } from "../../../context";
 import Button from "../button/Button";
 
 const NavBar = () => {
-  const { setIsAuth } = useContext(AUTH_Context);
+  const { isAuth, setIsAuth } = useContext(AUTH_Context);
   const logout = () => {
     setIsAuth(false);
     localStorage.removeItem("auth");
@@ -13,7 +13,7 @@ const NavBar = () => {
     <nav className="navBar">
       <div className="navBar_items">
         <Link to="/posts" className="links">
-          Posts
+          Main
         </Link>
         <Link to="/about" className="links">
           About
@@ -21,7 +21,7 @@ const NavBar = () => {
       </div>
       <div className="navBar_items">
         <Button onClick={logout} style={{ background: "#fff" }}>
-          Logout
+          {isAuth ? "Logout" : "LogIn"}
         </Button>
       </div>
     </nav>

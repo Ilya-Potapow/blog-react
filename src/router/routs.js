@@ -8,7 +8,9 @@ export const privatRouts = [
     { path: '/about', element: <About /> },
     { path: '/posts', element: <Posts /> },
     { path: '/posts/:id', element: <PostPage /> },
+    { path: '/error', element: <Error /> },
 ]
 export const publickRouts = [
-    { path: '/login', element: <Login /> },   
+    { path: '/login', element: <Login /> },
+
 ]
