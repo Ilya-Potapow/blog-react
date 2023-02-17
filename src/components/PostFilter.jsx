@@ -10,7 +10,10 @@ const PostFilter = ({
   setLimit,
   update,
   checkCondition,
-}) => {
+}
+
+
+) => {
   return (
     <div className={cl.posts_filter}>
       <SearchPosts

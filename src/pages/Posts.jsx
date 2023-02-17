@@ -24,8 +24,7 @@ function Posts() {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const lastEl = useRef();
-  const [checkCondition, setCondition] = useState(false);
-
+  const [checkCondition, setCondition] = useState(true);
   const [fetchPosts, postsLoading, postsError] = useFetching(
     async (limit, page) => {
       const response = await postRequest.getPosts(limit, page);
@@ -34,15 +33,18 @@ function Posts() {
       setTotalPages(getPagesCount(totalCount, limit));
     }
   );
-
-  useObserver(lastEl, page < totalPages, postsLoading, () => {
-    if (checkCondition) setPage(page + 1);
-  });
-
   useEffect(() => {
     fetchPosts(limit, page);
-  }, [page, limit, checkCondition]);
-  console.log(seachedAndSortedPosts.length);
+  }, [page, limit]);
+
+  useEffect(() => {
+    setPosts([]);
+    fetchPosts(limit, page);
+  }, [checkCondition]);
+
+  useObserver(lastEl, page < totalPages && checkCondition, postsLoading, () => {
+    setPage(page + 1);
+  });
 
   const createPost = (newPost) => {
     setPosts([...postsData, newPost]);
@@ -52,10 +54,14 @@ function Posts() {
     setPosts(postsData.filter((p) => p.id !== currPost.id));
   };
   const changePage = (page) => {
+    setPosts([]);
     setPage(page);
   };
   const updateCheckbox = (condition) => {
     setCondition(condition);
+  };
+  const scrollTo = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -85,7 +91,6 @@ function Posts() {
         posts={seachedAndSortedPosts}
         title={"New posts"}
       />
-      <div style={{ height: "15px" }} ref={lastEl}></div>
 
       {seachedAndSortedPosts.length && !checkCondition ? (
         <Pagination
@@ -96,8 +101,10 @@ function Posts() {
       ) : (
         <div style={{ position: "fixed", top: "50px", right: "25px" }}>
           <Button className="page page_current">{page}</Button>
+          <Button onClick={scrollTo}>to top ^</Button>
         </div>
       )}
+      <div style={{ height: "15px" }} ref={lastEl}></div>
     </div>
   );
 }

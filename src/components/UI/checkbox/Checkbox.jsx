@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./../checkbox/Checkbox.css";
 
 const Checkbox = ({ update, label }) => {
-  const [isChecked, setIsChecked] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const checkboxHandler = () => {
     setIsChecked(!isChecked);
