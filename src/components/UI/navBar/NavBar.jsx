@@ -20,9 +20,15 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="navBar_items">
-        <Button onClick={logout} style={{ background: "#fff" }}>
-          {isAuth ? "Logout" : "LogIn"}
-        </Button>
+        {isAuth ? (
+          <Button onClick={logout} style={{ background: "#fff" }}>
+            Logout
+          </Button>
+        ) : (
+          <Link to="/login">
+            <Button style={{ background: "#fff" }}>Login</Button>
+          </Link>
+        )}
       </div>
     </nav>
   );

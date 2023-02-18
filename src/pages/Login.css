@@ -1,0 +1,20 @@
+.input_error {
+    background-color: #f9959580;
+}
+
+.input_correct {
+    background-color: #b9ff9b7f;
+}
+
+.input_default {
+    background-color: #fff;
+}
+
+form {
+    height: 150px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}

@@ -7,20 +7,25 @@ import "./styles/App.css"
 
 
 /* 
-[] - вынести все фильтры в боковую панель и закрепить
-[+] - чекбокс для инфинит скрола
+[] - валидация формы
+[] - после регистрации перекидывать на логин
+[] - вынести все фильтры в боковую панель и закрепить, добавить глобалиные стили 
+[] - стили для коментов поста
 [] - страница About
+[+] - страница Login/ Registration
+[+] - чекбокс для инфинит скрола
 [+] - страница Error
 [+] - скрывать страницы при поиске
 [+] - кнопка для скролла в начало страницы
-[] - стили для коментов поста
-[] - валидация формы
 */
 
 
 function App() {
+
   const [isAuth, setIsAuth] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [authUsers, setAuthUser] = useState([{ username: "user", password: "user" }])
+
 
   useEffect(() => {
     if (localStorage.getItem('auth')) {
@@ -29,11 +34,22 @@ function App() {
     setIsLoading(false)
   }, [])
 
+  useEffect(() => {
+    if (localStorage.getItem("usersData")) {
+      setAuthUser(JSON.parse(localStorage.getItem("usersData")))
+    }
+  }, [])
+
+
+
+
   return (
     <AUTH_Context.Provider value={{
       isAuth,
       setIsAuth,
       isLoading,
+      authUsers,
+      setAuthUser,
     }}>
       <BrowserRouter >
         <NavBar />
