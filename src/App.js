@@ -7,8 +7,10 @@ import "./styles/App.css"
 
 
 /* 
-[] - валидация формы
-[] - после регистрации перекидывать на логин
+
+[+] - валидация формы
+[+] - отправлять данные при регистрации на почту 
+[+] - после регистрации перекидывать на логин
 [] - вынести все фильтры в боковую панель и закрепить, добавить глобалиные стили 
 [] - стили для коментов поста
 [] - страница About
@@ -24,7 +26,7 @@ function App() {
 
   const [isAuth, setIsAuth] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const [authUsers, setAuthUser] = useState([{ username: "user", password: "user" }])
+  const [authUsers, setAuthUser] = useState([{ mail: "user@.com", username: "1", password: "1" }])
 
 
   useEffect(() => {

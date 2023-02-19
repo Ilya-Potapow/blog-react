@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import Button from "../components/UI/button/Button";
 import { AUTH_Context } from "../context";
 import Input from "./../components/UI/input/Input";
-import { authUsers } from "../users/index.js";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
@@ -20,7 +19,7 @@ const Login = () => {
       if (userName == userNameLocal && pass == userPassLocal) {
         setCorrectUser(true);
         setCorrectPass(true);
-        setIsAuth(true);
+        return true;
       } else if (userName == userNameLocal) {
         setCorrectUser(true);
       } else if (pass == userPassLocal) {
@@ -34,7 +33,11 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
-    loginValidation();
+    if (loginValidation()) {
+      setIsAuth(true);
+      localStorage.setItem("auth", "true");
+      // window.location.replace("/posts");
+    }
   };
 
   return (
