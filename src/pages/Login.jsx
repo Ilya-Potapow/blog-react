@@ -9,26 +9,25 @@ const Login = () => {
   const { setIsAuth, authUsers } = useContext(AUTH_Context);
   const [userName, setUserName] = useState("");
   const [pass, setPass] = useState("");
-  const [correctUser, setCorrectUser] = useState("");
-  const [correctPass, setCorrectPass] = useState("");
+  const [error, setError] = useState({ user: false, password: false });
 
   const loginValidation = () => {
     for (let i = 0; i < authUsers.length; i++) {
       const userNameLocal = authUsers[i].username;
       const userPassLocal = authUsers[i].password;
-      if (userName == userNameLocal && pass == userPassLocal) {
-        setCorrectUser(true);
-        setCorrectPass(true);
+      if (userName === userNameLocal && pass === userPassLocal) {
+        setError({ ...error, user: false, password: false });
         return true;
-      } else if (userName == userNameLocal) {
-        setCorrectUser(true);
-      } else if (pass == userPassLocal) {
-        setCorrectPass(true);
+      } else if (userName === userNameLocal) {
+        setError({ ...error, user: false, password: true });
+        return;
+      } else if (pass === userPassLocal) {
+        setError({ ...error, user: true, password: false });
+        return;
       }
+      setError({ ...error, user: true, password: true });
     }
-    setCorrectPass(false);
-    setCorrectUser(false);
-    return;
+    return false;
   };
 
   const login = (e) => {
@@ -45,6 +44,9 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={login}>
         <Input
+          style={{
+            borderColor: error.user ? "#f05e09" : "#636363",
+          }}
           autoFocus
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
@@ -52,6 +54,9 @@ const Login = () => {
           placeholder="Type login"
         />
         <Input
+          style={{
+            borderColor: error.password ? "#f05e09" : "#636363",
+          }}
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           type="password"

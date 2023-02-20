@@ -11,6 +11,7 @@ import "./styles/App.css"
 [+] - валидация формы
 [+] - отправлять данные при регистрации на почту 
 [+] - после регистрации перекидывать на логин
+[] - рефактор createNewUser
 [] - вынести все фильтры в боковую панель и закрепить, добавить глобалиные стили 
 [] - стили для коментов поста
 [] - страница About
@@ -26,7 +27,7 @@ function App() {
 
   const [isAuth, setIsAuth] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const [authUsers, setAuthUser] = useState([{ mail: "user@.com", username: "1", password: "1" }])
+  const [authUsers, setAuthUser] = useState([{ mail: "user@.com", username: "user", password: "user" }])
 
 
   useEffect(() => {

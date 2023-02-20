@@ -100,14 +100,13 @@ const CreateUser = () => {
           onChange={onChangeUserInput}
           type="text"
           placeholder="Type login"
-        />
+        ></Input>
         <Input
           value={createUser.password}
           onChange={onChangePassInput}
           type={visible ? "text" : "password"}
           placeholder="Type password"
         ></Input>
-
         <Input
           style={{
             borderColor: error && createUser.mail ? "#f05e09" : "#636363",
@@ -115,7 +114,7 @@ const CreateUser = () => {
           type="email"
           onChange={onChangeMailInput}
           placeholder="Enter your email "
-        />
+        ></Input>
         <Button> Create </Button>
         <div style={{ display: "flex", gap: "10px" }}>
           <label htmlFor="show">show password</label>
@@ -138,3 +137,8 @@ export default CreateUser;
 // authUsers.push({ ...createUser });
 // localStorage.setItem("usersData", JSON.stringify(authUsers));
 // setCreateUser({ username: "", password: "" });
+/* 
+[] - создать темплейт для ошибок
+[] - зарбить на компоненты
+[] - рефактор повторяющегося кода
+*/
