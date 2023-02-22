@@ -1,0 +1,18 @@
+.button_default {
+    max-width: fit-content;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #d6d6d6a8;
+    padding: 5px 2px;
+    border-radius: 5px;
+}
+
+.button_default:active {
+    transform: scale(0.96);
+}
+
+.button_default:hover {
+
+    background-color: #d6d3d3;
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import cl from "./Button.module.css";
+import cl from "./ButtonMenu.module.css";
 
-const Button = ({ children, ...props }) => {
+const ButtonMenu = ({ children, ...props }) => {
   return (
     <button className={cl.button_default} {...props}>
       {children}
@@ -9,4 +9,4 @@ const Button = ({ children, ...props }) => {
   );
 };
 
-export default Button;
+export default ButtonMenu;

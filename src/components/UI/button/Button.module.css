@@ -1,13 +1,12 @@
-button {
+.button_default {
   max-width: fit-content;
   font-size: 16px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   border: none;
   cursor: pointer;
 }
 
-button:active {
+.button_default:active {
   color: white;
   background-color: #404040;
 }
-

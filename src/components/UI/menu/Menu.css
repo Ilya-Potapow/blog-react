@@ -26,39 +26,67 @@
 .menu__content {
     width: 25%;
     height: 100%;
-    background-color: #3d3d3d;
+    background-color: #a8a3a3;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease-in-out;
 }
 
-.menu__title {
-    margin: 25px 0 15px 0;
-    font-size: 1.5em;
-    color: rgb(255, 255, 255);
+.menu__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid white;
     width: 100%;
+    padding: 25px 50px;
+}
+
+.menu__title {
+    font-size: 2em;
+    color: rgb(0, 0, 0);
     text-align: center;
+}
+
+.menu__list-burger {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+.menu__list-burger a {
+    font-size: 25px;
 }
 
 ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 20px;
+    position: relative;
+
 }
 
-ul {
-    text-align: start;
+
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: all .3s ease-in-out;
 }
 
-ul li {
-    margin-top: 10px;
+ul li a:hover::after {
+    width: 70%;
 }
 
 @media screen and (max-width: 768px) {
     .menu__content {
         width: 100%;
+        gap: 50px;
     }
 
     .blur {
@@ -66,5 +94,13 @@ ul li {
         left: 0;
         width: 0;
         height: 0;
+    }
+
+    ul li a::after {
+        left: 0;
+    }
+
+    ul li a:hover::after {
+        width: 100%;
     }
 }

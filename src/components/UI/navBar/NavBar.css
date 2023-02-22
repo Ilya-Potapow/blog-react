@@ -1,10 +1,13 @@
 .header-navbar {
     width: 100%;
-    background-color: #ffffff;
-    height: 100px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
+    padding: 0 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);
 }
 
 .burger-btn {
@@ -41,4 +44,16 @@
     height: 2.5px;
     background-color: grey;
 
+}
+
+.menu__list {
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+
+}
+
+.header-logo img {
+    max-width: 100%;
+    height: auto;
 }
