@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import Button from "../components/UI/button/Button";
-import { AUTH_Context } from "../context";
-import Input from "./../components/UI/input/Input";
-import "./Login.css";
+import { AUTH_Context } from "./../../context";
+
+import Input from "../../components/UI/input/Input";
+import Button from "../../components/UI/button/Button";
 import { Link } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
   const { setIsAuth, authUsers } = useContext(AUTH_Context);

@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
-import Button from "../components/UI/button/Button";
-import Input from "../components/UI/input/Input";
-import { AUTH_Context } from "./../context";
-import { Email } from "../sendMail/smtp";
+import Button from "../../components/UI/button/Button";
+import Input from "../../components/UI/input/Input";
+import ShowPass from "../../components/UI/showPass/ShowPass";
+import ErrorEl from "../../components/UI/errorHtml/ErrorEl";
+import { AUTH_Context } from "../../context";
+import { Email } from "../../sendMail/smtp";
+import { isValidEmail } from "../../utils/emailHandler";
 
 import cl from "./CreateUser.module.css";
-import ErrorEl from "../components/UI/errorHtml/ErrorEl";
-import { isValidEmail } from "./../utils/emailHandler";
-import ShowPass from "../components/UI/showPass/ShowPass";
 
 const CreateUser = () => {
   const [createUser, setCreateUser] = useState({

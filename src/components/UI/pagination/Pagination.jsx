@@ -8,6 +8,7 @@ const Pagination = ({ totalPages, currPage, changePage, reset }) => {
     <div className="page_wrapper">
       {pagesArr.map((p, i) => (
         <Button
+          style={{padding: "5px", borderRadius: "3px"}}
           onClick={() => changePage(p)}
           className={p === currPage ? "page page_current" : "page"}
           key={i}

@@ -1,9 +1,9 @@
-import About from "./../pages/About";
-import Posts from "./../pages/Posts";
-import Error from "./../pages/Error";
+import About from "./../pages/about/About";
+import Posts from "./../pages/posts/Posts";
+import Error from "./../pages/error/Error";
 import PostPage from './../components/PostPage';
-import Login from "../pages/Login";
-import CreateUser from "../pages/CreateUser";
+import Login from "./../pages/login/Login";
+import CreateUser from "./../pages/registration/CreateUser";
 
 export const privatRouts = [
     { path: '/about', element: <About /> },

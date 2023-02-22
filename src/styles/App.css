@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
@@ -12,7 +12,7 @@ li{
 
 #root {
   font-size: 16px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Gelasio', serif;
   margin: 0 auto;
 }
 
@@ -37,9 +37,12 @@ a {
 }
 
 .App {
+  margin-top: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  gap: 65px;
 }
 
 .posts {
@@ -99,4 +102,11 @@ a {
 
 .page:active {
   transform: scale(0.95);
+}
+
+
+
+/* ======== Posts main content */
+.posts-content{
+
 }
