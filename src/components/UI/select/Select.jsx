@@ -2,10 +2,12 @@ import React from "react";
 import "./Select.css";
 
 const SortItem = ({ options, defaultValue, value, onChange }) => {
-
   return (
-    <div>
-      <select value={value} onChange={(e) => onChange(e.target.value)}>
+      <select
+        className="custom-select"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      >
         <option disabled value="">
           {defaultValue}
         </option>
@@ -15,7 +17,7 @@ const SortItem = ({ options, defaultValue, value, onChange }) => {
           </option>
         ))}
       </select>
-    </div>
+
   );
 };
 

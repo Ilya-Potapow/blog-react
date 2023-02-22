@@ -16,6 +16,12 @@ li {
   margin: 0 auto;
 }
 
+input,
+option,
+select {
+  font-family: 'Gelasio', serif;
+}
+
 h1,
 h2,
 h3,
@@ -107,6 +113,4 @@ a {
 
 
 /* ======== Posts main content */
-.posts-content{
-
-}
+.posts-content {}

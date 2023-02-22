@@ -7,7 +7,7 @@ import { useObserver } from "../../hooks/useObserver";
 
 import "../../styles/App.css";
 
-import PostList from "../../components/PostList";
+import PostList from "../../components/postsList/PostList";
 import PostForm from "../../components/PostForm";
 import PostFilter from "../../components/PostFilter";
 import ModalPosts from "../../components/UI/modal/ModalPosts";
@@ -70,8 +70,9 @@ function Posts() {
   return (
     <main className="App">
       <PostsHead></PostsHead>
+
       <section className="posts-content">
-        <Button onClick={() => setModal(true)}> Create post</Button>
+        {/* <Button onClick={() => setModal(true)}> Create post</Button> */}
         <ModalPosts visible={modal} setVisible={setModal}>
           <PostForm create={createPost} />
         </ModalPosts>

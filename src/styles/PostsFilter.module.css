@@ -1,8 +1,13 @@
-.posts_filter{
+.posts_filter {
     display: flex;
-    width: 250px;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+}
+
+.select_wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
 }
