@@ -1,24 +1,27 @@
 import Button from "./UI/button/Button";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./PostItem.css";
+import removeIcon from "./../assets/icons/delete.svg";
+import cl from "./../components/UI/button/Button.module.css";
 
 const PostItem = (props) => {
-  const rout = useNavigate();
+  const buttonHandler = () => {
+    props.remove(props.post);
+  };
   return (
-    <div className="posts">
-      <div className="post_content">
-        <h2 className="post_title">
-          <strong>{props.post.id}.</strong>
-          {props.post.title}
-        </h2>
-        <p className="post_text">{props.post.body}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <Button onClick={() => props.remove(props.post)}>Delete</Button>
-        <Button
-          style={{ marginLeft: "10px" }}
-          onClick={() => rout(`/posts/${props.post.id}`)}
-        >
-          Open
+    <div style={props.style} className="post-item">
+      <Link to={`/posts/${props.post.id}`}>
+        <div className="post_content">
+          <h3 className="post_title">
+            {/* <strong>{props.post.id}.</strong> */}
+            {props.post.title}
+          </h3>
+          <p className="post_text">{props.post.body}</p>
+        </div>
+      </Link>
+      <div className="button-wrapper">
+        <Button className={cl.button_defaultR} onClick={buttonHandler}>
+          <img className="remove-icon" src={removeIcon}></img>
         </Button>
       </div>
     </div>

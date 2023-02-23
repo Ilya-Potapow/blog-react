@@ -19,6 +19,11 @@ export class postRequest {
         const response = await (await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`))
         return response
     }
+    // static async getImages() {
+    //     const API_KEY = 'xE8ukhjofnzIL5s92u5TLD65IXW3Z8SKD_PnmtpQvp8'
+    //     const response = await (await axios.get(`https://picsum.photos/200`))
+    //     return response
+    // }
 
 }
 

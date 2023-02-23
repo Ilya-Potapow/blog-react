@@ -1,7 +1,22 @@
-.posts-item__title {
+.posts-items__title {
     font-family: 'Gelasio', serif;
     text-align: center;
     font-weight: 700;
     font-size: 44px;
     line-height: 1.25;
 }
+
+.posts-content {
+    width: 100%;
+    max-width: 855px;
+}
+
+.posts-items__wrapper {
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 65px;
+
+}
+

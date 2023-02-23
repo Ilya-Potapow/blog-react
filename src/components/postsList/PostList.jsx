@@ -1,23 +1,23 @@
 import React from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { generateColor } from "../../utils/colorGenerator";
 import PostItem from "../PostItem";
 import "./PostsList.css";
 
 const PostList = ({ posts, remove }) => {
-  if (!posts.length) {
-    return <h2 className="posts-item__title">Empty posts list..</h2>;
-  }
   return (
-    <div>
-      <h2 className="posts-item__title">All articles</h2>
-      <TransitionGroup>
+    <section className="posts-content">
+      <div className="posts-items__wrapper">
         {posts.map((p, i) => (
-          <CSSTransition key={p.id} classNames="post" timeout={500}>
-            <PostItem remove={remove} numb={i + 1} post={p} />
-          </CSSTransition>
+          <PostItem
+            style={generateColor()}
+            key={i}
+            remove={remove}
+            numb={i + 1}
+            post={p}
+          />
         ))}
-      </TransitionGroup>
-    </div>
+      </div>
+    </section>
   );
 };
 

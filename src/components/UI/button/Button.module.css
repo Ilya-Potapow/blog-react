@@ -10,3 +10,14 @@
   color: white;
   background-color: #404040;
 }
+
+.button_defaultR {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button_defaultR:active {
+  transform: scale(0.9)
+}

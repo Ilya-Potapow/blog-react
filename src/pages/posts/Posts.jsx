@@ -36,8 +36,8 @@ function Posts() {
   );
 
   useEffect(() => {
-    setPosts([]);
     setLimit(10);
+    setPosts([]);
     fetchPosts(limit, page);
   }, [checkCondition]);
 
@@ -64,26 +64,17 @@ function Posts() {
     setCondition(condition);
   };
   const scrollTo = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 550, behavior: "smooth" });
   };
 
   return (
     <main className="App">
       <PostsHead></PostsHead>
-
       <section className="posts-content">
         {/* <Button onClick={() => setModal(true)}> Create post</Button> */}
         <ModalPosts visible={modal} setVisible={setModal}>
           <PostForm create={createPost} />
         </ModalPosts>
-        <PostFilter
-          filter={filter}
-          limit={limit}
-          setFilter={setFilter}
-          setLimit={setLimit}
-          update={updateCheckbox}
-          checkCondition={checkCondition}
-        ></PostFilter>
 
         {postsError && <span style={{ color: "orange" }}>{postsError}</span>}
         {postsLoading && (
@@ -91,11 +82,26 @@ function Posts() {
             <Loader />
           </div>
         )}
-        <PostList
-          remove={removePost}
-          posts={seachedAndSortedPosts}
-          title={"All articles"}
-        ></PostList>
+        <div>
+          {seachedAndSortedPosts.length ? (
+            <h2 className="posts-items__title">All articles</h2>
+          ) : (
+            <h2 className="posts-items__title">Empty posts list..</h2>
+          )}
+          <PostFilter
+            filter={filter}
+            limit={limit}
+            setFilter={setFilter}
+            setLimit={setLimit}
+            update={updateCheckbox}
+            checkCondition={checkCondition}
+          ></PostFilter>
+          <PostList
+            remove={removePost}
+            posts={seachedAndSortedPosts}
+            title={"All articles"}
+          ></PostList>
+        </div>
 
         {seachedAndSortedPosts.length && !checkCondition ? (
           <Pagination

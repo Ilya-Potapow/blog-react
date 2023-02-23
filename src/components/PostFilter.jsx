@@ -32,6 +32,7 @@ const PostFilter = ({
         <Checkbox update={update} label="" />
         {checkCondition ? (
           <SortItem
+            className="custom-select--number"
             value={limit}
             onChange={(value) => setLimit(value)}
             defaultValue="Load posts"

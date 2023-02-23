@@ -28,7 +28,6 @@ h3,
 h4,
 h5,
 button,
-p,
 a {
 
   font-family: 'Cinzel', serif;
@@ -51,14 +50,7 @@ a {
   gap: 65px;
 }
 
-.posts {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: rgba(147, 45, 242, 0.4);
-}
+
 
 .posts_form {
   display: flex;
@@ -67,23 +59,6 @@ a {
   justify-content: center;
 }
 
-.post-enter {
-  transform: translateX(-350px);
-}
-
-.post-enter-active {
-  transform: translateX(0px);
-  transition: all 500ms ease-in;
-}
-
-.post-exit {
-  opacity: 1;
-}
-
-.post-exit-active {
-  transform: translateX(-350px);
-  transition: all 500ms ease-in;
-}
 
 .page_wrapper {
   display: flex;
