@@ -3,12 +3,26 @@ import React from "react";
 export const useViewport = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
 
+
     React.useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleWindowResize);
-        return () => window.removeEventListener("resize", handleWindowResize);
+        const handleWindowResizeWidth = () => {
+            setWidth(window.innerWidth);
+        }
+        window.addEventListener("resize", handleWindowResizeWidth);
+        return () => window.removeEventListener("resize", handleWindowResizeWidth);
     }, []);
 
-    // Return the width so we can use it in our components
     return { width };
+}
+
+export const useScroll = () => {
+    const [height, setHeight] = React.useState(window.pageYOffset);
+    React.useEffect(() => {
+        const handleScrollPage = () => {
+            setHeight(window.pageYOffset);
+        }
+        window.addEventListener("scroll", handleScrollPage);
+        return () => document.removeEventListener("scroll", handleScrollPage);
+    }, []);
+    return { height };
 }

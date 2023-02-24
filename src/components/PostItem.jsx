@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import "./PostItem.css";
 import removeIcon from "./../assets/icons/delete.svg";
 import cl from "./../components/UI/button/Button.module.css";
+import { generateColor } from "./../utils/colorGenerator";
 
 const PostItem = (props) => {
   const buttonHandler = () => {
     props.remove(props.post);
   };
   return (
-    <div style={props.style} className="post-item">
+    <div style={generateColor()} className="post-item">
       <Link to={`/posts/${props.post.id}`}>
         <div className="post_content">
           <h3 className="post_title">

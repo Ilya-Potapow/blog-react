@@ -1,0 +1,26 @@
+.page {
+    font-size: 20px;
+    font-family: 'Cinzel', serif;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.page_current {
+    color: #fff;
+    background-color: #5264AE;
+    pointer-events: none;
+}
+
+.page:hover {
+    background-color: #000000c6;
+    color: #fff;
+
+}
+
+.page:active {
+    transform: scale(0.95);
+}

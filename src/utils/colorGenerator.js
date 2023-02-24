@@ -21,5 +21,5 @@ export const generateColor = () => {
     for (let i = 0; i < 6; i++) {
         code += hexArray[Math.floor(Math.random() * 15)];
     }
-    return { borderLeft: `10px solid #${code}75` };
+    return { borderLeft: `10px solid #${code}90` };
 };

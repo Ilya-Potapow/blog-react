@@ -4,6 +4,7 @@ import { postRequest } from "../../API/PostServise";
 import { getPagesCount } from "../../utils/pages";
 import { useFetching } from "../../hooks/useFetching";
 import { useObserver } from "../../hooks/useObserver";
+import { useScroll } from "../../hooks/useVievport";
 
 import "../../styles/App.css";
 
@@ -11,10 +12,10 @@ import PostList from "../../components/postsList/PostList";
 import PostForm from "../../components/PostForm";
 import PostFilter from "../../components/PostFilter";
 import ModalPosts from "../../components/UI/modal/ModalPosts";
-import Button from "../../components/UI/button/Button";
 import Loader from "../../components/UI/loader/Loader";
 import Pagination from "../../components/UI/pagination/Pagination";
 import PostsHead from "../../components/UI/postsHead/PostsHead";
+import ScrollTop from "../../components/UI/scrollTop/ScrollTop";
 
 function Posts() {
   const [postsData, setPosts] = useState([]);
@@ -63,9 +64,7 @@ function Posts() {
   const updateCheckbox = (condition) => {
     setCondition(condition);
   };
-  const scrollTo = () => {
-    window.scrollTo({ top: 550, behavior: "smooth" });
-  };
+
 
   return (
     <main className="App">
@@ -110,12 +109,10 @@ function Posts() {
             changePage={changePage}
           ></Pagination>
         ) : (
-          <div style={{ position: "fixed", top: "50px", right: "25px" }}>
-            <Button className="page page_current">{page}</Button>
-            <Button onClick={scrollTo}>to top ^</Button>
-          </div>
+          ""
         )}
-        <div style={{ height: "15px" }} ref={lastEl}></div>
+        <ScrollTop></ScrollTop>
+        <div style={{ height: "5px" }} ref={lastEl}></div>
       </section>
     </main>
   );

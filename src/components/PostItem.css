@@ -6,11 +6,19 @@
     border-bottom-left-radius: 10px;
     box-shadow: rgb(109 107 107 / 85%) 3px 2px 12px 0px;
     /* background-color: #932df266; */
+    transition: all .2s ease-in-out;
 }
 
 .post-item a {
     color: black;
     text-decoration: none;
+
+}
+
+.post-item:hover {
+    transform: translateY(-10px);
+    box-shadow: #5264AE 3px 2px 12px 0px;
+
 }
 
 .post-text {
