@@ -6,11 +6,6 @@
     line-height: 1.25;
 }
 
-.posts-content {
-    width: 100%;
-    max-width: 855px;
-}
-
 .posts-items__wrapper {
     margin: 25px auto;
     display: grid;
@@ -20,3 +15,10 @@
 
 }
 
+@media screen and (max-width: 768px) {
+    .posts-items__wrapper {
+        justify-content: center;
+        grid-template-columns: minmax(350px, 60%);
+        row-gap: 25px;
+    }
+}

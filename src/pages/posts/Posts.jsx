@@ -4,9 +4,9 @@ import { postRequest } from "../../API/PostServise";
 import { getPagesCount } from "../../utils/pages";
 import { useFetching } from "../../hooks/useFetching";
 import { useObserver } from "../../hooks/useObserver";
-import { useScroll } from "../../hooks/useVievport";
 
 import "../../styles/App.css";
+import "./../posts/Posts.css";
 
 import PostList from "../../components/postsList/PostList";
 import PostForm from "../../components/PostForm";
@@ -35,11 +35,9 @@ function Posts() {
       setTotalPages(getPagesCount(totalCount, limit));
     }
   );
-
   useEffect(() => {
-    setLimit(10);
     setPosts([]);
-    fetchPosts(limit, page);
+    fetchPosts(10, page);
   }, [checkCondition]);
 
   useEffect(() => {
@@ -64,7 +62,6 @@ function Posts() {
   const updateCheckbox = (condition) => {
     setCondition(condition);
   };
-
 
   return (
     <main className="App">

@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <nav className="header-navbar">
       <div className="header-logo">
-        <Link to="/posts">
+        <Link to="posts">
           {/* NORDIC ROSE */}
           <img src={logo} alt="Nordic Rose logo" />
         </Link>

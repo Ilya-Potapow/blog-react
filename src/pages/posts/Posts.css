@@ -1,20 +1,4 @@
-/* .wrapper_posts {
-    display: grid;
-    grid-template-areas:
-        "a a a"
-        "b b c"
-        "b b c";
-    justify-items: center;
-}
-
-.posts-head {
-    grid-area: a;
-}
-
 .posts-content {
-    grid-area: b;
+    width: 100%;
+    max-width: 855px;
 }
-
-.posts-settings {
-    grid-area: c;
-} */

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./components/AppRouter";
+import Footer from "./components/UI/footer/Footer";
 import NavBar from "./components/UI/navBar/NavBar";
 import { AUTH_Context } from "./context";
 import "./styles/App.css"
 
 
 /* 
-
-[] - вынести все фильтры в боковую панель и закрепить, добавить глобалиные стили 
 [] - стили для коментов поста
 [] - страница About
+[] - стили для форм логина\рег
+[] - адаптив
+[+] - footer
+[+] - вынести все фильтры в боковую панель и закрепить
 [+] - Burger menu adaptive
 [+] - валидация формы
 [+] - отправлять данные при регистрации на почту 
@@ -45,20 +48,22 @@ function App() {
   }, [])
 
   return (
-    <div className="container">
-      <AUTH_Context.Provider value={{
-        isAuth,
-        setIsAuth,
-        isLoading,
-        authUsers,
-        setAuthUser,
-      }}>
-        <BrowserRouter >
+
+    <AUTH_Context.Provider value={{
+      isAuth,
+      setIsAuth,
+      isLoading,
+      authUsers,
+      setAuthUser,
+    }}>
+      <BrowserRouter >
+        <div className="container">
           <NavBar />
           <AppRouter />
-        </BrowserRouter>
-      </AUTH_Context.Provider>
-    </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AUTH_Context.Provider>
   )
 }
 

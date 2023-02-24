@@ -21,8 +21,12 @@
 
 }
 
-.post-text {
+.post_text {
     font-size: 18px;
+    font-family: 'Gelasio', serif;
+}
+.post_text::first-letter{
+    text-transform: uppercase;
 }
 
 .post_title {

@@ -5,7 +5,7 @@ import "./PostsHead.css";
 const PostsHead = () => {
   return (
     <section className="posts-head">
-      {/* <img src={contentImage} alt="" /> */}
+      <img src={contentImage} alt="" />
       <h2 className="posts-head__title">
         A few words about this blog platform, Ghost, and how this site was made
       </h2>

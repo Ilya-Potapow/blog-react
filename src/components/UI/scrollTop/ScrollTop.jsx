@@ -6,7 +6,7 @@ const ScrollTop = () => {
   const { height } = useScroll();
   const breakpoint = 450;
   const scrollTo = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 735, behavior: "smooth" });
   };
   if (height < breakpoint) return;
   return (
