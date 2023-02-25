@@ -29,9 +29,9 @@ const Footer = () => {
         nunc eget ligula suscipit finibus.
       </div>
       <div className="footer-links">
-        <a href="!#">Twitter</a>
-        <a href="!#">LinkedIn</a>
-        <a href="!#">RSS</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">RSS</a>
       </div>
       <div className="footer-copyrights">
         <p>© 2012–2020 Nordic Rose Co. &#169;All rights reserved.</p>

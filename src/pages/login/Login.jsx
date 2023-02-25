@@ -36,7 +36,6 @@ const Login = () => {
     if (loginValidation()) {
       setIsAuth(true);
       localStorage.setItem("auth", "true");
-      // window.location.replace("/posts");
     }
   };
 

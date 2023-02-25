@@ -17,7 +17,21 @@
   background-color: transparent;
   cursor: pointer;
 }
-
-.button_defaultR:active {
+.button_defaultR:active,
+.button_defaultComments:active {
   transform: scale(0.9)
+}
+.button_defaultComments {
+  border-radius: 5px;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  border: 1px solid rgba(128, 128, 128, 0.567);
 }

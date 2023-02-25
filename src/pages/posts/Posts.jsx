@@ -9,9 +9,9 @@ import "../../styles/App.css";
 import "./../posts/Posts.css";
 
 import PostList from "../../components/postsList/PostList";
-import PostForm from "../../components/PostForm";
+
 import PostFilter from "../../components/PostFilter";
-import ModalPosts from "../../components/UI/modal/ModalPosts";
+
 import Loader from "../../components/UI/loader/Loader";
 import Pagination from "../../components/UI/pagination/Pagination";
 import PostsHead from "../../components/UI/postsHead/PostsHead";
@@ -21,7 +21,6 @@ function Posts() {
   const [postsData, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: "", search: "" });
   const seachedAndSortedPosts = usePosts(postsData, filter.sort, filter.search);
-  const [modal, setModal] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
@@ -47,11 +46,6 @@ function Posts() {
   useObserver(lastEl, page < totalPages && checkCondition, postsLoading, () => {
     setPage(page + 1);
   });
-
-  const createPost = (newPost) => {
-    setPosts([...postsData, newPost]);
-    setModal(false);
-  };
   const removePost = (currPost) => {
     setPosts(postsData.filter((p) => p.id !== currPost.id));
   };
@@ -67,10 +61,7 @@ function Posts() {
     <main className="App">
       <PostsHead></PostsHead>
       <section className="posts-content">
-        {/* <Button onClick={() => setModal(true)}> Create post</Button> */}
-        <ModalPosts visible={modal} setVisible={setModal}>
-          <PostForm create={createPost} />
-        </ModalPosts>
+
 
         {postsError && <span style={{ color: "orange" }}>{postsError}</span>}
         {postsLoading && (
