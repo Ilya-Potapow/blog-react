@@ -53,17 +53,3 @@ a {
 
 
 
-.posts_form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
-
-
-
-
-/* ======== Posts main content */
-.posts-content {}

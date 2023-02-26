@@ -1,0 +1,12 @@
+.comm_form {
+    padding: 25px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    flex-wrap: nowrap;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #5264ae5b;
+}

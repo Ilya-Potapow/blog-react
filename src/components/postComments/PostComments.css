@@ -14,7 +14,8 @@
 }
 
 .comments img {
-    width: 15;
+    vertical-align: top;
+    width: 15px;
     height: 15px;
 }
 
