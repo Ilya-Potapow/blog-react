@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    margin-bottom: 10px;
 
     background-color: white;
     border-radius: 5px;
@@ -42,4 +43,45 @@
 
 .comments-body::first-letter {
     text-transform: uppercase;
+}
+
+
+.comment-enter {
+    opacity: 0;
+}
+
+.comment-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.comment-exit {
+    opacity: 1;
+}
+
+.comment-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.comment-new-enter {
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.comment-new-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 500ms;
+}
+
+.comment-new-exit {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.comment-new-exit-active {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: all 500ms;
 }

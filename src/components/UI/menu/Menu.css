@@ -40,12 +40,14 @@
     border-bottom: 1px solid white;
     width: 100%;
     padding: 25px 50px;
+    gap: 25px;
 }
 
-.menu__title {
-    font-size: 2em;
-    color: rgb(0, 0, 0);
-    text-align: center;
+.menu__head img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+
 }
 
 .menu__list-burger {
@@ -55,21 +57,19 @@
     gap: 30px;
 }
 
-.menu__list-burger a {
-    font-size: 25px;
-}
 
-ul li a {
+.menu__list-link,
+.menu__list-burger-links {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     position: relative;
 
 }
 
 
 
-ul li a::after {
+.menu__list-link::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -81,7 +81,7 @@ ul li a::after {
     transition: all .3s ease-in-out;
 }
 
-ul li a:hover::after {
+.menu__list-link:hover::after {
     width: 70%;
 }
 
@@ -98,11 +98,11 @@ ul li a:hover::after {
         height: 0;
     }
 
-    ul li a::after {
+    .menu__list-link::after {
         left: 0;
     }
 
-    ul li a:hover::after {
+    .menu__list-link:hover::after {
         width: 100%;
     }
 }

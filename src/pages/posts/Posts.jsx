@@ -61,8 +61,6 @@ function Posts() {
     <main className="App">
       <PostsHead></PostsHead>
       <section className="posts-content">
-
-
         {postsError && <span style={{ color: "orange" }}>{postsError}</span>}
         {postsLoading && (
           <div style={{ marginTop: "50px" }}>

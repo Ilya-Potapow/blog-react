@@ -11,7 +11,6 @@ const NavBar = () => {
   const items = [
     { value: "Blog", to: "/posts" },
     { value: "About", to: "/about" },
-    { value: "Contacts", to: "/about" },
   ];
 
   const [menuActive, setMenuActive] = useState(false);
@@ -31,7 +30,9 @@ const NavBar = () => {
           <ul className="menu__list">
             {items.map((el) => (
               <li key={el.value}>
-                <Link to={el.to}>{el.value}</Link>
+                <Link className="menu__list-link" to={el.to}>
+                  {el.value}
+                </Link>
               </li>
             ))}
             <LoginLogout />
