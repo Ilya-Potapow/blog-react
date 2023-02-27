@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import Button from "../../components/UI/button/Button";
-import Input from "../../components/UI/input/Input";
 import ShowPass from "../../components/UI/showPass/ShowPass";
 import ErrorEl from "../../components/UI/errorHtml/ErrorEl";
 import { AUTH_Context } from "../../context";
 import { Email } from "../../sendMail/smtp";
 import { isValidEmail } from "../../utils/emailHandler";
+import "./../../components/UI/loginForm/LoginForm.css";
 
 import cl from "./CreateUser.module.css";
+import className from "./../../components/UI/button/Button.module.css";
+import InputLogin from "../../components/UI/inputLogin/InputLogin";
 
 const CreateUser = () => {
   const [createUser, setCreateUser] = useState({
@@ -90,33 +92,35 @@ const CreateUser = () => {
   };
 
   return (
-    <div>
-      <h1> Registration</h1>
-      <form className="create_user" onSubmit={validateReg}>
-        <Input
-          autoFocus
-          value={createUser.username}
-          onChange={onChangeUserInput}
-          type="text"
-          placeholder="Type login"
-        ></Input>
-        <Input
-          value={createUser.password}
-          onChange={onChangePassInput}
-          type={visiblePass ? "text" : "password"}
-          placeholder="Type password"
-        ></Input>
-        <Input
-          style={{
-            borderColor: error && createUser.mail ? "#f05e09" : "#636363",
-          }}
-          type="email"
-          onChange={onChangeMailInput}
-          placeholder="Enter your email "
-        ></Input>
-        <Button> Create </Button>
-        <ShowPass passHandler={showPassword} />
-      </form>
+    <div className="login-container">
+      <div className="login-title">Registration</div>
+      <div className="form-container">
+        <form className="login-form" onSubmit={validateReg}>
+          <InputLogin
+            autoFocus
+            value={createUser.username}
+            onChange={onChangeUserInput}
+            type="text"
+            placeholder="Type login"
+          ></InputLogin>
+          <InputLogin
+            value={createUser.password}
+            onChange={onChangePassInput}
+            type={visiblePass ? "text" : "password"}
+            placeholder="Type password"
+          ></InputLogin>
+          <InputLogin
+            style={{
+              borderColor: error && createUser.mail ? "#f05e09" : "#ddd",
+            }}
+            type="email"
+            onChange={onChangeMailInput}
+            placeholder="Enter your email "
+          ></InputLogin>
+          <ShowPass passHandler={showPassword} />
+          <Button className={className.button_login}> Create </Button>
+        </form>
+      </div>
       <div className={cl.error_wrapper}>
         {isUniqUser ? "" : <ErrorEl>User already exist</ErrorEl>}
         {isUniqMail ? "" : <ErrorEl>Mail already exist</ErrorEl>}

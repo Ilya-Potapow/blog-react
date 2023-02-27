@@ -1,12 +1,15 @@
 .input-login {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
     width: 100%;
-    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: none;
 }
+
 
 .input-login:focus {
     outline: none;
+    box-shadow: 0px 0px 5px #bbb;
+    border-color: #bbb;
 }

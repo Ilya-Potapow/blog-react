@@ -1,22 +1,31 @@
 .login-container {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.form-container {
-    padding: 10px;
-    overflow: hidden;
-    width: 500px;
-    background-color: rgba(186, 186, 186, 0.119);
-    border-radius: 15px;
-    border: 1px solid rgba(128, 128, 128, 0.405);
-
+    text-align: center;
 }
 
 .login-title {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.form-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    min-width: 350px;
+    background-color: #d6d6d6a8;
+    border-radius: 4px;
+    padding: 2rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.reg-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-top: 1rem;
 }

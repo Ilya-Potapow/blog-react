@@ -54,12 +54,12 @@ const Login = () => {
           userName={userName}
           pass={pass}
         ></LoginForm>
-      </div>
-      <div className="reg-container">
-        <div className="login-title">New user?</div>
-        <Link to="/registration">
-          <Button className={cl.button_login}>Create new account</Button>
-        </Link>
+        <div className="reg-container">
+          <div className="reg-title">New user?</div>
+          <Link to="/registration">
+            <Button className={cl.button_login}>Create new account</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
