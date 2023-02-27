@@ -18,6 +18,7 @@ const CurrentPost = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
   if (loading) return <Loader />;
   return (
     <div className="current-post">

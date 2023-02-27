@@ -1,20 +1,22 @@
-.input_error {
-    background-color: #f9959580;
-}
-
-.input_correct {
-    background-color: #b9ff9b7f;
-}
-
-.input_default {
-    background-color: #fff;
-}
-
-form {
-    height: 150px;
-    width: 300px;
+.login-container {
+    height: 50vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.form-container {
+    padding: 10px;
+    overflow: hidden;
+    width: 500px;
+    background-color: rgba(186, 186, 186, 0.119);
+    border-radius: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.405);
+
+}
+
+.login-title {
+    font-size: 30px;
+    font-weight: 600;
 }

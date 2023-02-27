@@ -4,14 +4,10 @@ import { postRequest } from "../../API/PostServise";
 import { getPagesCount } from "../../utils/pages";
 import { useFetching } from "../../hooks/useFetching";
 import { useObserver } from "../../hooks/useObserver";
-
 import "../../styles/App.css";
 import "./../posts/Posts.css";
-
 import PostList from "../../components/postsList/PostList";
-
 import PostFilter from "../../components/PostFilter";
-
 import Loader from "../../components/UI/loader/Loader";
 import Pagination from "../../components/UI/pagination/Pagination";
 import PostsHead from "../../components/UI/postsHead/PostsHead";
@@ -35,14 +31,15 @@ function Posts() {
     }
   );
   useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+  useEffect(() => {
     setPosts([]);
     fetchPosts(10, page);
   }, [checkCondition]);
-
   useEffect(() => {
     fetchPosts(limit, page);
   }, [page, limit]);
-
   useObserver(lastEl, page < totalPages && checkCondition, postsLoading, () => {
     setPage(page + 1);
   });

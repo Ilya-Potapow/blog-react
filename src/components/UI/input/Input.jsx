@@ -7,7 +7,6 @@ const Input = (props) => {
       <input className="input-form" {...props}></input>
       <span className="highlight"></span>
       <span className="bar"></span>
-      {/* <label className="input-label">Name</label> */}
     </div>
   );
 };

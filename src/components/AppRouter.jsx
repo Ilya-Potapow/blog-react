@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AUTH_Context } from "../context";
 
-import { privatRouts, publickRouts } from "../router/routs";
+import { privateRoutes, publicRoutes } from "./../router/routs.js";
 import Loader from "./UI/loader/Loader";
 
 const AppRouter = () => {
@@ -12,21 +12,18 @@ const AppRouter = () => {
     return <Loader />;
   }
 
-  return isAuth ? (
+  const routes = isAuth ? privateRoutes : publicRoutes;
+  const defaultRoute = isAuth ? "/posts" : "/login";
+  const errorPage = isAuth ? "/error" : "/login";
+
+  return (
     <Routes>
-      {privatRouts.map((r, i) => (
-        <Route key={r.path} path={r.path} element={r.element} />
+      {routes.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
       ))}
-      <Route path="" element={<Navigate to="/posts" replace />} />
-      <Route path="/login" element={<Navigate to="/posts" replace />} />
-      <Route path="*" element={<Navigate to="/error" replace />} />
-    </Routes>
-  ) : (
-    <Routes>
-      {publickRouts.map((r, i) => (
-        <Route key={r.path} path={r.path} element={r.element} />
-      ))}
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="/" element={<Navigate to="/posts" replace />} />
+      <Route path="/login" element={<Navigate to={defaultRoute} replace />} />
+      <Route path="*" element={<Navigate to={errorPage} replace />} />
     </Routes>
   );
 };

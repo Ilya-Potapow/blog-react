@@ -2,23 +2,28 @@ import React from "react";
 import "./Footer.css";
 import footerLogo from "./../../../assets/footer/nordic_rose.svg";
 const Footer = () => {
+  const footerLinks = [
+    "Digital product design",
+    "Remote work",
+    "UX design",
+    "Distributed teams",
+    "Creativity",
+    "Strategy",
+    "Suspense",
+    "Growth",
+    "UI",
+    "Front-end",
+    "Blog concepts",
+    "News feed",
+    "React blog page",
+    "Pet project",
+  ];
   return (
     <footer>
       <marquee className="footer-line">
-        <span>Digital product design</span>
-        <span>Remote work</span>
-        <span>UX design</span>
-        <span>Distributed teams</span>
-        <span>Creativity</span>
-        <span>Strategy</span>
-        <span>Suspense</span>
-        <span>Growth</span>
-        <span>UI</span>
-        <span>Front-end</span>
-        <span>Blog concepts</span>
-        <span>News feed</span>
-        <span>React blog page</span>
-        <span>Pet project</span>
+        {footerLinks.map((link, index) => (
+          <span key={index}>{link}</span>
+        ))}
       </marquee>
       <div className="footer-logo">
         <img src={footerLogo} alt="" />

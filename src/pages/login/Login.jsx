@@ -1,36 +1,38 @@
 import React, { useContext, useState } from "react";
 import { AUTH_Context } from "./../../context";
-
-import Input from "../../components/UI/input/Input";
 import Button from "../../components/UI/button/Button";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import cl from "./../../components/UI/button/Button.module.css";
+import LoginForm from "../../components/UI/loginForm/LoginForm";
 
 const Login = () => {
   const { setIsAuth, authUsers } = useContext(AUTH_Context);
   const [userName, setUserName] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState({ user: false, password: false });
+  const [userBG, setUserBG] = useState("#fff");
+  const [passwordBG, setpasswordBG] = useState("#fff");
 
   const loginValidation = () => {
-    for (let i = 0; i < authUsers.length; i++) {
-      const userNameLocal = authUsers[i].username;
-      const userPassLocal = authUsers[i].password;
-      if (userName === userNameLocal && pass === userPassLocal) {
-        setError({ ...error, user: false, password: false });
-        return true;
-      } else if (userName === userNameLocal) {
-        setError({ ...error, user: false, password: true });
-        return;
-      } else if (pass === userPassLocal) {
-        setError({ ...error, user: true, password: false });
-        return;
-      }
-      setError({ ...error, user: true, password: true });
+    const foundUser = authUsers.find(
+      (user) => user.username === userName && user.password === pass
+    );
+    if (foundUser) {
+      setError({ user: false, password: false });
+      setUserBG("fff");
+      setpasswordBG("#fff");
+      return true;
+    } else {
+      const userError = authUsers.some((user) => user.username === userName);
+      const passwordError = authUsers.some((user) => user.password === pass);
+      setError({ user: userError, password: passwordError });
+      setUserBG(userError ? "#fff" : "#ee14141c");
+      setpasswordBG(passwordError ? "#fff" : "#ee14141c");
+      return false;
     }
-    return false;
   };
-
+  // TO DO РАЗБИТЬ НА 2 ФУНКЦИИ
   const login = (e) => {
     e.preventDefault();
     if (loginValidation()) {
@@ -40,34 +42,23 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={login}>
-        <Input
-          style={{
-            borderColor: error.user ? "#f05e09" : "#636363",
-          }}
-          autoFocus
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          type="text"
-          placeholder="Type login"
-        />
-        <Input
-          style={{
-            borderColor: error.password ? "#f05e09" : "#636363",
-          }}
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-          type="password"
-          placeholder="Type password"
-        />
-        <Button> Sign In </Button>
-      </form>
-      <div style={{ marginTop: "25px" }}>
-        <h2>Firs times here?</h2>
+    <div className="login-container">
+      <div className="login-title">Login</div>
+      <div className="form-container">
+        <LoginForm
+          login={login}
+          userBG={userBG}
+          passwordBG={passwordBG}
+          setUserName={setUserName}
+          setPass={setPass}
+          userName={userName}
+          pass={pass}
+        ></LoginForm>
+      </div>
+      <div className="reg-container">
+        <div className="login-title">New user?</div>
         <Link to="/registration">
-          <Button>Create new account</Button>
+          <Button className={cl.button_login}>Create new account</Button>
         </Link>
       </div>
     </div>
