@@ -1,19 +1,8 @@
 import React from "react";
 import "./About.css";
 import image from "./../../assets/about/about.png";
-import {
-  gitHub,
-  google,
-  telegram,
-  css,
-  html,
-  figma,
-  js,
-  react,
-  git,
-  wp,
-  reactRouter,
-} from "./../../assets/about/tech";
+import Contacts from "../../components/UI/contacts/Contacts";
+import TechList from "../../components/UI/techList/TechList";
 
 const About = () => {
   return (
@@ -36,67 +25,8 @@ const About = () => {
         <img src={image} alt="" />
       </div>
       <div className="about-project">
-        <div className="about-contacts">
-          <h2 className="contact-title">Contacts</h2>
-          <ul className="about-contact__list">
-            <li className="about-contact__item">
-              <a
-                href="https://github.com/Ilya-Potapow"
-                target="_blank"
-                className="about-link"
-              >
-                <img src={gitHub} alt="" />
-              </a>
-            </li>
-            <li className="about-contact__item">
-              <a
-                href="mailto:potapow.ilay22@gmail.com"
-                target="_blank"
-                className="about-link"
-              >
-                <img src={google} alt="" />
-              </a>
-            </li>
-            <li className="about-contact__item">
-              <a
-                href="https://t.me/mvPotap"
-                target="_blank"
-                className="about-link"
-              >
-                <img src={telegram} alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="about-tech">
-          <h2 className="tech-title">Stack</h2>
-          <ul className="tech-list">
-            <li className="about-tech__item">
-              <img src={html} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={css} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={js} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={react} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={reactRouter} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={wp} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={git} alt="" />
-            </li>
-            <li className="about-tech__item">
-              <img src={figma} alt="" />
-            </li>
-          </ul>
-        </div>
+        <Contacts />
+        <TechList />
       </div>
     </section>
   );

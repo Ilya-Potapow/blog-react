@@ -1,0 +1,29 @@
+.about-contact__list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.about-contact__list img {
+    max-width: 40px;
+}
+
+.contact-title {
+    text-align: center;
+    padding-bottom: 35px;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.about-contact__item {
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.about-contact__item:hover {
+    transform: translateY(-5px);
+}
+
+.about-link {
+    text-decoration: none;
+}

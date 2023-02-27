@@ -7,13 +7,13 @@
 
 .about-info {
     margin-top: 25px;
-    width: 45%;
+    flex-basis: 45%;
+    /* изменено на flex-basis для более явной установки размера */
 }
 
 .about-project {
     width: 100%;
 }
-
 
 .about-info>* {
     margin-top: 25px;
@@ -22,7 +22,6 @@
 .about-image {
     width: 50%;
 }
-
 
 .about-image img {
     min-width: 500px;
@@ -52,67 +51,29 @@
     text-align: left;
     padding-left: 50px;
     border-bottom: 1px solid rgba(136, 136, 136, 0.505);
-
 }
-.about-tech{
-    margin-top: 50px;
-}
-
-.about-tech img {
-
-    width: 56px;
-    height: 56px;
-}
-
-.about-contact__list,
-.tech-list {
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.about-link {
-    text-decoration: none;
-}
-
-.about-contact__list img {
-    max-width: 40px;
-}
-.tech-list img{
-    max-width: 100px;
-}
-
-.contact-title,
-.tech-title {
-    text-align: center;
-    padding-bottom: 35px;
-    font-size: 25px;
-    font-family: cursive;
-
-}
-
-.about-contact__item,
-.about-tech__item {
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
-}
-
-.about-tech__item:hover,
-.about-contact__item:hover {
-    transform: translateY(-5px);
-}
-
-
-
-
 
 @media screen and (max-width: 1000px) {
     .about {
         margin-top: 25px;
         flex-direction: column;
         align-items: center;
+        gap: 0;
+        /* добавлено для устранения ненужного промежутка в мобильном виде */
+    }
+
+    .about-info {
+        flex-basis: 100%;
+        /* изменено на flex-basis для растяжения блока на всю ширину в мобильном виде */
+    }
+
+    .about-image {
+        width: 100%;
+        /* изменено на 100% для растяжения блока на всю ширину в мобильном виде */
+    }
+
+    .about-text {
+        padding-left: 25px;
+        /* изменено на 25px для совпадения с отступом заголовка в мобильном виде */
     }
 }

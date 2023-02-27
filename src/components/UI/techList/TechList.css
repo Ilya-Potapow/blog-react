@@ -1,0 +1,40 @@
+.about-tech {
+    margin-top: 50px;
+}
+
+.about-tech__item,
+.tech-list img {
+    max-width: 100px;
+}
+
+.about-tech img {
+    width: 56px;
+    height: 56px;
+}
+
+.about-tech__item,
+.about-link {
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+}
+
+.about-tech__item:hover,
+.tech-list img:hover {
+    transform: translateY(-5px);
+}
+
+.tech-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.tech-title {
+    text-align: center;
+    padding-bottom: 35px;
+    font-size: 25px;
+    font-family: cursive;
+}
