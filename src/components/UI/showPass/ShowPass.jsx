@@ -1,6 +1,7 @@
 import React from "react";
+import { showPassword } from "../../../utils/showPassword";
 
-const ShowPass = ({ passHandler }) => {
+const ShowPass = ({ visiblePass, setVisiblePass }) => {
   return (
     <div style={{ display: "flex", gap: "10px" }}>
       <label htmlFor="show">show password</label>
@@ -8,7 +9,7 @@ const ShowPass = ({ passHandler }) => {
         style={{ width: "20px", height: "20px" }}
         id="show"
         type="checkbox"
-        onChange={passHandler}
+        onChange={() => showPassword(visiblePass, setVisiblePass)}
       ></input>
     </div>
   );

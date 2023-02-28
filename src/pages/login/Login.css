@@ -1,5 +1,7 @@
 .login-container {
     text-align: center;
+    margin-top: 50px;
+    height: 50vh;
 }
 
 .login-title {
@@ -14,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 35%;
     min-width: 350px;
     background-color: #d6d6d6a8;
     border-radius: 4px;

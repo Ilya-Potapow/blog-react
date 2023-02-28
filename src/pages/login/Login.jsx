@@ -31,8 +31,7 @@ const Login = () => {
       setpasswordBG(passwordError ? "#fff" : "#ee14141c");
       return false;
     }
-  };
-  // TO DO РАЗБИТЬ НА 2 ФУНКЦИИ
+  }
   const login = (e) => {
     e.preventDefault();
     if (loginValidation()) {
