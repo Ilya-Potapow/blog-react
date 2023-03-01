@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/blog-react/static/css/main.2430f9a9.css",
+    "main.js": "/blog-react/static/js/main.0d4c0b3f.js",
+    "static/media/about.png": "/blog-react/static/media/about.a0e556e07cd7a766f162.png",
+    "static/media/top_logo.jpg": "/blog-react/static/media/top_logo.c34c2c1b0bc9ab3ad805.jpg",
+    "static/media/react-router.svg": "/blog-react/static/media/react-router.27e144073d17bd9769afb00b7e0d93c2.svg",
+    "static/media/nordic-rose.svg": "/blog-react/static/media/nordic-rose.47e73829579802d66f1845d7bc898ec4.svg",
+    "static/media/nordic_rose.svg": "/blog-react/static/media/nordic_rose.f5e31b586108a69b6c974e9234033d17.svg",
+    "static/media/react.svg": "/blog-react/static/media/react.73063e398426b5a8dd2899c4bb4c9a04.svg",
+    "static/media/gitHub.svg": "/blog-react/static/media/gitHub.94f7ba5cb5efa2fab80be441019f7136.svg",
+    "static/media/google.svg": "/blog-react/static/media/google.02e28b7df53a7d5abe1d41d6355cd0ff.svg",
+    "static/media/telegram.svg": "/blog-react/static/media/telegram.99f5b6c3bea57acef946e3037ca414d9.svg",
+    "static/media/git.svg": "/blog-react/static/media/git.ee6a8bc12de3a449c1654d4217122c5a.svg",
+    "static/media/js.svg": "/blog-react/static/media/js.ace58a138574675494c4bd8fcfc97004.svg",
+    "static/media/figma.svg": "/blog-react/static/media/figma.62193189e00c03109af59b86015b5220.svg",
+    "static/media/wp.svg": "/blog-react/static/media/wp.66459d49f0ff37412e30fe8f87e3b06f.svg",
+    "static/media/css.svg": "/blog-react/static/media/css.0385d6d99da3dce62981ab423a48c036.svg",
+    "static/media/html.svg": "/blog-react/static/media/html.50bbce193186471e21ea209bff21d550.svg",
+    "static/media/like.svg": "/blog-react/static/media/like.bb7c1dc841813189e38e43c6db0fd453.svg",
+    "index.html": "/blog-react/index.html",
+    "static/media/delete.svg": "/blog-react/static/media/delete.9762dcdd8027c0e15728f71a4894b777.svg",
+    "static/media/x.svg": "/blog-react/static/media/x.14dc834418a7bb49265d2a21a942fead.svg",
+    "static/media/plus.svg": "/blog-react/static/media/plus.98de4be7e475b8a942f8e0710c42146c.svg",
+    "main.2430f9a9.css.map": "/blog-react/static/css/main.2430f9a9.css.map",
+    "main.0d4c0b3f.js.map": "/blog-react/static/js/main.0d4c0b3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2430f9a9.css",
+    "static/js/main.0d4c0b3f.js"
+  ]
+}
