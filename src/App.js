@@ -58,7 +58,7 @@ function App() {
       authUsers,
       setAuthUser,
     }}>
-      <BrowserRouter >
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="container">
           <NavBar />
           <AppRouter />
