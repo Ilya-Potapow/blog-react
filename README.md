@@ -1,8 +1,8 @@
-# Blog React                          
+# React Posts App                       
 [__Deploy__](https://ilya-potapow.github.io/blog-react/)          
 
 
-This is a blog website built using React. It retrieves blog posts from the JSONPlaceholder API and allows users to view and comment on posts. The application has public and private routes. The project also includes search and filter functions, as well as interaction with local storage.
+This is a post site built using React. It receives posts from the JSONPlaceholder API and allows users to view and comment on posts. The application has public and private routes. The project also includes search and filter functions, as well as interaction with local storage.
 
 - UI component library developed
 - Created public and private routes
